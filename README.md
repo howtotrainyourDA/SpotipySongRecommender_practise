@@ -1,12 +1,19 @@
 # 🎶 Spotify Song Recommender
 
-![App Screenshot](stills/SpotifySongRecommender.png) 
 
 ## Summary
 The Spotify Song Recommender is an interactive web application designed to help users discover new music based on their preferences. By leveraging the Spotify API, the app allows users to search for songs or artists, filter results based on popularity and release year, and receive personalized song recommendations. The underlying recommendation system utilizes clustering algorithms to analyze song features and provide tailored suggestions. This project not only enhances the music discovery experience but also showcases the power of data science in the music industry.
 
+
+![App Screenshot](stills/SpotifySongRecommender_landing.png) 
+![App Screenshot](stills/SpotifySongRecommender_validation.png) 
+![App Screenshot](stills/SpotifySongRecommender_recommendations.png) 
+
+
+
+
 ## Link to Deployed App
-[Visit the Spotify Song Recommender](https://spotifysongrec-practise.streamlit.app/)
+[Visit the Spotify Song Recommender](https://spotifysong-recommender-beta.streamlit.app/)
 
 ## Resources
 - **Spotify API**: [Spotify Developer](https://developer.spotify.com/documentation/web-api/)
@@ -25,6 +32,7 @@ The recommendation system employs a KMeans clustering model to group similar son
 SpotipySongRecommender_practise/
 ├── app/
 │   ├── recommender_app.py
+│   ├── allinone_app.py
 ├── notebooks/
 │   ├── separate notebooks for each step of the project
 ├── data/
