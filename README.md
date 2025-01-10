@@ -16,6 +16,8 @@ The Spotify Song Recommender is an interactive web application designed to help 
 ## Resources
 - **Spotify API**: [Spotify Developer](https://developer.spotify.com/documentation/web-api/)
 - **Million Song Dataset (Subset)**: [Million Song Dataset](http://millionsongdataset.com/)
+- **Streamlit**: [Streamlit](https://streamlit.io/)
+- **Billboard Hot 100**: [Billboard Hot 100](https://www.billboard.com/charts/hot-100/)
 
 ## Model Used and Evaluation
 The recommendation system employs a KMeans clustering model to group similar songs based on their features. The model's performance was evaluated using Silhouette and Elbow methods, which helped determine the optimal number of clusters for effective recommendations.
