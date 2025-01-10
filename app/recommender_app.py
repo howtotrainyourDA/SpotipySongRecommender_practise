@@ -72,15 +72,18 @@ def search_song(song_name, popularity_range, year_range, hot_songs_only):
         artist_id = track['artists'][0]['id']
         artist_info = spotify.artist(artist_id)
         genres = artist_info['genres']
+        release_year = int(track['album']['release_date'].split('-')[0])  # Get the year as an integer
+
             
             # Store track data
         track_info = {
-            'original_title': track['title'],
-            'original_artist': track['artist'],
+           
             'spotify_title': track['name'],
             'spotify_artist': track['artists'][0]['name'],
             'album': track['album']['name'],
             'release_date': track['album']['release_date'],
+            'year': release_year,  # Add the year to the track_info
+
             'popularity': track['popularity'],
             'duration_ms': track['duration_ms'],
             'explicit': track['explicit'],
@@ -88,10 +91,12 @@ def search_song(song_name, popularity_range, year_range, hot_songs_only):
             'genres': genres
         }
 
+        track_info['popularity'] = int(track_info['popularity'])
+
         # Filter based on popularity and year range
-        if not (popularity_range[0] <= track_info['popularity'] <= popularity_range[1]):
+        if popularity_range and not (popularity_range[0] <= track_info['popularity'] <= popularity_range[1]):
             continue
-        if not (year_range[0] <= track_info['year'] <= year_range[1]):
+        if year_range and not (year_range[0] <= track_info['year'] <= year_range[1]):
             continue
         if hot_songs_only and track_info['popularity'] < 50:
             continue  # Skip songs with low popularity if hot_songs_only is checked
