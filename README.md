@@ -7,9 +7,7 @@ The Spotify Song Recommender is an interactive web application designed to help 
 
 ![App Screenshot](stills/SpotifySongRecommender_landing.png) 
 ![App Screenshot](stills/SpotifySongRecommender_validation.png) 
-![App Screenshot](stills/SpotifySongRecommender_recommendations.png) 
-
-
+![App Screenshot](stills/SpotifySongRecommender_recs.png) 
 
 
 ## Link to Deployed App
