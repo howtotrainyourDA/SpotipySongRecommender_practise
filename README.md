@@ -65,7 +65,7 @@ SpotipySongRecommender_practise/
    ```
 
 3. **Update Environment Variables**
-   - Create a `.env` file in the root directory and add your Spotify API credentials:
+   - Create a `.env` file or `.streamlit/secrets.toml` file in the root directory and add your Spotify API credentials:
      ```
      SPOTIPY_CLIENT_ID=your_client_id
      SPOTIPY_CLIENT_SECRET=your_client_secret
