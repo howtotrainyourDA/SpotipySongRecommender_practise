@@ -6,9 +6,8 @@ import joblib
 import os
 
 # Load models and scaler only once
-
-spotify_scaler = joblib.load('../scaler/spotify_scaler.pkl')
-kmeans_model = joblib.load('../models/kmeans_model.pkl')
+spotify_scaler = joblib.load(os.path.join('./', 'scaler', 'spotify_scaler.pkl'))
+kmeans_model = joblib.load(os.path.join('./', 'models', 'kmeans_model.pkl'))
 
 
 # Initialize Spotify client
