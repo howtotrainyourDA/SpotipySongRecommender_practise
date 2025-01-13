@@ -10,13 +10,9 @@ import os
 spotify_scaler = joblib.load('../scaler/spotify_scaler.pkl')
 kmeans_model = joblib.load('../models/kmeans_model.pkl')
 
-# Set your Spotify credentials
-SPOTIPY_CLIENT_ID = os.getenv('SPOTIPY_CLIENT_ID')
-SPOTIPY_CLIENT_SECRET = os.getenv('SPOTIPY_CLIENT_SECRET')
-
 
 # Initialize Spotify client
-spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(client_id=SPOTIPY_CLIENT_ID, client_secret=SPOTIPY_CLIENT_SECRET))
+spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(client_id=st.secrets["SPOTIPY_CLIENT_ID"], client_secret=st.secrets["SPOTIPY_CLIENT_SECRET"]))
 
 
 
@@ -37,7 +33,6 @@ if 'current_recommendations' not in st.session_state:
 # Page navigation functions
 def on_find_songs_click():
     st.session_state.page = 'validation'
-
 def on_use_this_click(song):
     # Store selected song details in session state
     st.session_state.selected_song = song
