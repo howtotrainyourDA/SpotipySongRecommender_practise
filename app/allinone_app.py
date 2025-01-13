@@ -118,7 +118,7 @@ def get_recommendations(selected_track_info, n_recommendations=10):
 
     # Add the genres column
     # Load the columns used in spotify_numerical.csv and remove the first 4 columns
-    genres_columns = pd.read_csv('../data/6_spotify_numerical_scaled.csv').columns[4:-1]
+    genres_columns = pd.read_csv('./data/6_spotify_numerical_scaled.csv').columns[4:-1]
 
     # Add the genres column to user_song_data, if the genre is in the list, add 1, if not, add 0
     for genre in genres_columns:
@@ -139,7 +139,7 @@ def get_recommendations(selected_track_info, n_recommendations=10):
     cluster = kmeans_model.predict(user_song_scaled_df)[0]
 
     # 3. Load clustered dataset and filter for the same cluster
-    clustered_df = pd.read_csv('../data/8_spotify_million_tracks_clustered.csv')
+    clustered_df = pd.read_csv('./data/8_spotify_million_tracks_clustered.csv')
     cluster_songs = clustered_df[clustered_df['kmeans_cluster'] == cluster]
 
     # 4. Get recommendations excluding the input song
